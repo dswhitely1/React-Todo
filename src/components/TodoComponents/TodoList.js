@@ -4,8 +4,9 @@ import React from 'react';
 import './Todo.scss';
 
 const TodoList = ({ tasks, toggleComplete }) => {
-	const { task } = tasks;
-	return <p>{task}</p>;
+  const { task, id,completed } = tasks;
+  const completedClass = completed ? `completed` : ``;
+  return <p onClick={toggleComplete}  className={completedClass} id={ id }>{ task }</p>;
 };
 
 export default TodoList;
