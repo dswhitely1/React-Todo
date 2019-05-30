@@ -12,6 +12,7 @@
     "react-scripts": "3.0.1",
     "moment": "latest"
   },
+  "homepage": "https://condescending-poincare-459d45.netlify.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
