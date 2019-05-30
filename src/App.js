@@ -7,15 +7,19 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   constructor (props) {
     super(props);
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
     this.state = {
-      task       : tasks,
+      task       : [],
       formValue  : '',
       searchText : '',
-      taskDisplay: tasks,
+      taskDisplay: [],
       errors     : false,
     };
   }
+  componentDidMount () {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    if (tasks[ 0 ] !== undefined) this.setState({ task: tasks, taskDisplay: tasks })
+  }
+
 
   handleSearchChange = e => {
     const displayFilteredResults = e.target.value === '' ? this.state.task : this.state.task.filter(results => results.task.includes(e.target.value));
