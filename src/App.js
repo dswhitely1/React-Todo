@@ -16,8 +16,10 @@ class App extends React.Component {
     };
   }
   componentDidMount () {
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
-    if (tasks[ 0 ] !== undefined) this.setState({ task: tasks, taskDisplay: tasks })
+    if (localStorage.getItem('tasks') !== null) {
+      const tasks=JSON.parse(localStorage.getItem('tasks'));
+      this.setState({task:tasks,taskDisplay:tasks});
+    }
   }
 
 
